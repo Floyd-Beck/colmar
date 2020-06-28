@@ -109,6 +109,17 @@ header {
   position: fixed;
 }
 
+footer {
+  top: 4rem;
+  position: relative;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #d8d8d8;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
 li {
   margin-left: 1rem;
 }
@@ -139,14 +150,22 @@ ul {
   list-style: none;
 }
 
+video {
+  width: 100%;
+}
+
 .thesis {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  
 }
 
 .thesis h1 {
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .thesis_content {
@@ -159,12 +178,13 @@ ul {
   padding-top: 0;
 }
 
-.thesis_content .others .articlex .pic {
-  width: 35%;
+.thesis .left h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
-video {
-  width: 100%;
+.thesis_content .others .articlex .pic {
+  width: 35%;
 }
 
 .articles {
@@ -200,13 +220,6 @@ video {
   padding: 1rem; 
 }
 
-.articles .others {
-  display: flex;
-  flex-direction: column;
-  padding-top: 1rem;
-  padding-bottom: 2rem;
-}
-
 .articles .others .articlex {
   display: flex;
   flex-direction: row;
@@ -221,21 +234,8 @@ video {
 }
 
 .courses {
-  background-color: #d8d8d8;
-  padding: 2rem 3.5rem;
-}
-
-.courses .course {
-  background-color: white;
-  width: 30%;
-  margin: 0 1rem;
-  margin-bottom: 2rem;
-}
-
-.courses .coursebox {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .courses h1{
@@ -259,34 +259,175 @@ video {
   background-color: gray;
 }
 
-.left {
-  width: 60%;
-  padding: 2rem 1.5rem;
-  flex-grow: 1;
-  flex-shrink: 1;
-}
-
 .light {
   font-weight: lighter;
 }
 
+.links a {
+  padding-left: 1rem;
+  font-size: 1rem;
+}
+
 .pic img {
   width: 100%;
-  height: auto;
 }
 
-.right {
-  width: 40%;
-  flex-grow: 1;
-  flex-shrink: 1;
+
+
+
+
+/* Desktop */
+
+@media only screen and (min-width: 801px) {
+  .mobile {
+    display: none;
+  }
+
+  .left {
+    width: 60%;
+    padding: 2rem 1.5rem;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  .right {
+    width: 40%;
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+
+  #logo {
+    height: 4rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin: 0 1.5rem;
+  }
+
+
+  /* Articles */
+
+  .articles .others {
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Courses */
+
+  .courses {
+    background-color: #d8d8d8;
+    padding: 2rem 3.5rem;
+  }
+
+  .courses .course {
+    background-color: white;
+    width: 30%;
+    margin: 0 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .courses .coursebox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+}
+/* Mobile */
+
+@media only screen and (max-width: 800px) {
+  .desktop {
+    display: none;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0 1.5rem;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 100%;
+    background-color: grey;
+  }
+
+  .cover {
+    flex-direction: column;
+    padding-bottom: 2rem;
+  }
+
+  .cover .description {
+    padding: 0 1rem;
+  }
+
+  .cover .pic {
+    width: 100%;
+  }
+
+  .cover .pic img {
+    width: 100%;
 }
 
-#logo {
-  height: 4rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-  margin: 0 1.5rem;
-}
+  /* Articles */
+
+  .articles .featured {
+    display: none;
+  }
+
+  .articles .others {
+    padding: 1rem 1rem 2rem 1rem;
+    width: 100%;
+  }
+
+  /* Courses */
+
+  .courses {
+    margin-bottom: 1.5rem;
+  }
+
+  .courses .course {
+    background-color: #d8d8d8;
+    padding: 1rem 1rem 1.5rem 1rem;
+    margin: 0 1rem 0.5rem 1rem;
+  }
+
+  .courses .coursebox {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .courses .pic {
+    display: none;
+  }
+
+  .course .description h3,
+  .course .description p {
+    display: none;
+  }
+
+  /* Thesis */
+
+  .thesis .description {
+    display: none;
+  }
+
+  .thesis .right {
+    display: none;
+  }
+
+  /* footer */
+
+  footer {
+    align-items: center;
+  }
+
+  footer .links {
+    display: none;
+  }
